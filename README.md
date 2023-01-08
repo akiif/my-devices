@@ -1,7 +1,7 @@
 # my-devices
 
 > A website listing all of the tech devices that I have owned.
-> Live demo [_here_](https://zodyto.github.io/my-devices).
+> Live demo [_here_](https://akiif.github.io/my-devices).
 
 ## Table of contents
 
