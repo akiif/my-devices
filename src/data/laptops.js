@@ -6,7 +6,7 @@ export default [
   {
     id: 1,
     name: "HP OMEN 15-ce002nx",
-    date: "22/08/2018",
+    purchased_date: "22/08/2018",
     year: 2018,
     processor: "Intel Core i7 7th Gen",
     graphics_card: "Nvidia GTX 1050",
@@ -16,7 +16,7 @@ export default [
   {
     id: 2,
     name: "Lenovo Yoga Slim 7i Pro",
-    date: "10/08/2022",
+    purchased_date: "10/08/2022",
     year: 2022,
     processor: "Intel Core evo i5 11th Gen",
     graphics_card: "Integrated",
