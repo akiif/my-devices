@@ -20,7 +20,7 @@ function DeviceItem({ item }) {
           {item.purchased_date ? item.purchased_date : "NA"}
         </p>
         <p className="desc">
-          <span className="desc-header">Acquired Year:&nbsp;</span> {item.year}
+          <span className="desc-header">Acquired Year:&nbsp;</span> {item.acquired_year}
         </p>
         <p className="desc" style={{ display: "none" }}>
           <span className="desc-header">Used Till:&nbsp;</span>{" "}
