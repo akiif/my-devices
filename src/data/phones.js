@@ -8,6 +8,7 @@ import PocoF1 from "../assets/images/phones/poco-f1.webp";
 import OnePlus8 from "../assets/images/phones/oneplus8.webp";
 import PocoX3 from "../assets/images/phones/poco-x3.webp";
 import OnePlus11 from "../assets/images/phones/oneplus-11.webp";
+import SamsungGalaxyS26Ultra from "../assets/images/phones/samsung-galaxy-s26-ultra.webp";
 
 export default [
   {
@@ -90,7 +91,30 @@ export default [
     purchased_date: "08/11/2023",
     acquired_year: 2023,
     usedTill: "",
+    specs: {
+      ram: "8gb",
+      memory: "128gb",
+      processor: "Snapdragon 8 Gen 2",
+      spec_sheet_url: "https://www.gsmarena.com/oneplus_11-11893.php",
+    },
     link: "https://www.oneplus.in/11",
     img: OnePlus11,
+  },
+  {
+    id: 10,
+    name: "Samsung Galaxy S26 Ultra",
+    released_date: "25/02/2026",
+    purchased_date: "30/03/2026",
+    acquired_year: 2026,
+    usedTill: "",
+    specs: {
+      ram: "12gb",
+      memory: "256gb",
+      processor: "Snapdragon 8 Elite Gen 5",
+      spec_sheet_url:
+        "https://www.gsmarena.com/samsung_galaxy_s26_ultra_5g-14320.php",
+    },
+    link: "https://www.samsung.com/sa_en/smartphones/galaxy-s26-ultra/",
+    img: SamsungGalaxyS26Ultra,
   },
 ];
