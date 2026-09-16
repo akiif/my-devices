@@ -1,13 +1,16 @@
 import { CurrentYear, YearsSince } from "@/components/current-year";
-import { devices } from "@/data/devices";
+import { categoryLabels, devices, type Category } from "@/data/devices";
 
 export function Hero() {
   const first = Math.min(...devices.map((d) => d.acquired_year));
+  const categories = Object.keys(categoryLabels) as Category[];
 
   const stats = [
     { label: "Devices", value: devices.length },
-    { label: "Phones", value: devices.filter((d) => d.category === "phones").length },
-    { label: "Laptops", value: devices.filter((d) => d.category === "laptops").length },
+    ...categories.map((c) => ({
+      label: `${categoryLabels[c]}s`,
+      value: devices.filter((d) => d.category === c).length,
+    })),
     { label: "Years", value: <YearsSince from={first} /> },
   ];
 
@@ -29,7 +32,7 @@ export function Hero() {
           hands over the years.
         </p>
 
-        <dl className="mt-10 grid grid-cols-2 overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-4 gap-px">
+        <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3 lg:grid-cols-6">
           {stats.map((s) => (
             <div key={s.label} className="bg-background/80 px-5 py-4 backdrop-blur">
               <dt className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
