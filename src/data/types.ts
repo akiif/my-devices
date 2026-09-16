@@ -1,8 +1,11 @@
 export interface DeviceSpecs {
-  ram: string;
-  memory: string;
-  processor: string;
-  spec_sheet_url: string;
+  processor?: string;
+  gpu?: string;
+  ram?: string;
+  storage?: string[];
+  display?: string;
+  camera?: string;
+  spec_sheet_url?: string;
 }
 
 export interface Device {
@@ -13,8 +16,6 @@ export interface Device {
   acquired_year: number;
   usedTill?: string;
   note?: string;
-  processor?: string;
-  graphics_card?: string;
   specs?: DeviceSpecs;
   link: string;
   img: string;

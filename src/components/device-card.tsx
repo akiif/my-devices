@@ -6,11 +6,10 @@ import { cn } from "@/lib/utils";
 
 export function specChips(device: CategorizedDevice): string[] {
   const s = device.specs;
-  return [
-    s?.processor ?? device.processor,
-    device.graphics_card && device.graphics_card !== "Integrated" ? device.graphics_card : undefined,
-    s ? `${s.ram.toUpperCase()} / ${s.memory.toUpperCase()}` : undefined,
-  ].filter((x): x is string => Boolean(x));
+  const storage = (s?.storage ?? []).map((d) => (/^\d+(MB|GB|TB)$/.test(d) ? `${d} storage` : d));
+  return [s?.processor, s?.gpu, s?.ram && `${s.ram} RAM`, ...storage].filter(
+    (x): x is string => Boolean(x),
+  );
 }
 
 export function DeviceImage({ device, className }: { device: CategorizedDevice; className?: string }) {
@@ -32,6 +31,9 @@ export function DeviceCard({ device }: { device: CategorizedDevice }) {
   const released = formatDate(device.released_date);
   const acquired = formatDate(device.purchased_date);
   const chips = specChips(device);
+  const summary = [device.specs?.display, device.specs?.camera && `${device.specs.camera} camera`]
+    .filter(Boolean)
+    .join(" · ");
 
   return (
     <a
@@ -51,7 +53,10 @@ export function DeviceCard({ device }: { device: CategorizedDevice }) {
         </div>
 
         <div className="flex items-start justify-between gap-3">
-          <h3 className="leading-snug font-semibold tracking-tight">{device.name}</h3>
+          <div>
+            <h3 className="leading-snug font-semibold tracking-tight">{device.name}</h3>
+            {summary && <p className="mt-1 text-xs text-muted-foreground">{summary}</p>}
+          </div>
           <ArrowUpRight className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand" />
         </div>
 
