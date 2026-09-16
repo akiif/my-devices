@@ -1,16 +1,6 @@
-// import images
-import NokiaN73 from "../assets/images/phones/nokia-n73.webp";
-import SamsungGalaxyMini2 from "../assets/images/phones/samsung_galaxy_mini2.webp";
-import SonyXperiaPlay from "../assets/images/phones/sony-ericsson-xperia-play.webp";
-import SamsungGalaxyA5 from "../assets/images/phones/samsung-galaxy-a5.webp";
-import SamsungGalaxyA7 from "../assets/images/phones/samsung-galaxy-a7-2017.webp";
-import PocoF1 from "../assets/images/phones/poco-f1.webp";
-import OnePlus8 from "../assets/images/phones/oneplus8.webp";
-import PocoX3 from "../assets/images/phones/poco-x3.webp";
-import OnePlus11 from "../assets/images/phones/oneplus-11.webp";
-import SamsungGalaxyS26Ultra from "../assets/images/phones/samsung-galaxy-s26-ultra.webp";
+import type { Device } from "./types";
 
-export default [
+const phones: Device[] = [
   {
     id: 1,
     name: "Nokia N73",
@@ -18,7 +8,7 @@ export default [
     acquired_year: 2011,
     usedTill: "",
     link: "https://www.gsmarena.com/nokia_n73-1550.php",
-    img: NokiaN73,
+    img: "/images/devices/phones/nokia-n73.webp",
   },
   {
     id: 2,
@@ -27,7 +17,7 @@ export default [
     acquired_year: 2012,
     usedTill: "",
     link: "https://www.gsmarena.com/samsung_galaxy_mini_2_s6500-3883.php",
-    img: SamsungGalaxyMini2,
+    img: "/images/devices/phones/samsung_galaxy_mini2.webp",
   },
   {
     id: 3,
@@ -36,7 +26,7 @@ export default [
     acquired_year: 2014,
     usedTill: "",
     link: "https://www.gsmarena.com/sony_ericsson_xperia_play-3608.php",
-    img: SonyXperiaPlay,
+    img: "/images/devices/phones/sony-ericsson-xperia-play.webp",
   },
   {
     id: 4,
@@ -45,7 +35,7 @@ export default [
     acquired_year: 2015,
     usedTill: "",
     link: "https://www.gsmarena.com/samsung_galaxy_a5-6761.php",
-    img: SamsungGalaxyA5,
+    img: "/images/devices/phones/samsung-galaxy-a5.webp",
   },
   {
     id: 5,
@@ -54,7 +44,7 @@ export default [
     acquired_year: 2017,
     usedTill: "",
     link: "https://www.samsung.com/latin_en/smartphones/galaxy-a/galaxy-a7-black-32gb-sm-a720fzkjtpa/",
-    img: SamsungGalaxyA7,
+    img: "/images/devices/phones/samsung-galaxy-a7-2017.webp",
   },
   {
     id: 6,
@@ -63,7 +53,7 @@ export default [
     acquired_year: 2019,
     usedTill: "",
     link: "https://www.gsmarena.com/xiaomi_pocophone_f1-9293.php",
-    img: PocoF1,
+    img: "/images/devices/phones/poco-f1.webp",
   },
   {
     id: 7,
@@ -72,7 +62,7 @@ export default [
     acquired_year: 2020,
     usedTill: "",
     link: "https://www.oneplus.in/8",
-    img: OnePlus8,
+    img: "/images/devices/phones/oneplus8.webp",
   },
   {
     id: 8,
@@ -81,7 +71,7 @@ export default [
     acquired_year: 2020,
     usedTill: "",
     link: "https://www.po.co/global/poco-x3-nfc/",
-    img: PocoX3,
+    img: "/images/devices/phones/poco-x3.webp",
     note: "Spare Phone",
   },
   {
@@ -98,7 +88,7 @@ export default [
       spec_sheet_url: "https://www.gsmarena.com/oneplus_11-11893.php",
     },
     link: "https://www.oneplus.in/11",
-    img: OnePlus11,
+    img: "/images/devices/phones/oneplus-11.webp",
   },
   {
     id: 10,
@@ -115,6 +105,8 @@ export default [
         "https://www.gsmarena.com/samsung_galaxy_s26_ultra_5g-14320.php",
     },
     link: "https://www.samsung.com/sa_en/smartphones/galaxy-s26-ultra/",
-    img: SamsungGalaxyS26Ultra,
+    img: "/images/devices/phones/samsung-galaxy-s26-ultra.webp",
   },
 ];
+
+export default phones;

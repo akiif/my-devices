@@ -1,9 +1,6 @@
-// import images
-import HPOmen15 from "../assets/images/laptops/hp-omen-15.webp";
-import LenovoYogaSlim7iPro from "../assets/images/laptops/lenovo-yoga-slim-7i-pro.webp";
-import MsiSword16HX from "../assets/images/laptops/msi-sword-16-hx-b14v.webp";
+import type { Device } from "./types";
 
-export default [
+const laptops: Device[] = [
   {
     id: 1,
     name: "HP OMEN 15-ce002nx",
@@ -12,7 +9,7 @@ export default [
     processor: "Intel Core i7 7th Gen",
     graphics_card: "Nvidia GTX 1050",
     link: "https://support.hp.com/in-en/product/omen-by-hp-15-ce000-laptop-pc-series/15551437/model/20486649?sku=3LH85EA",
-    img: HPOmen15,
+    img: "/images/devices/laptops/hp-omen-15.webp",
   },
   {
     id: 2,
@@ -22,7 +19,7 @@ export default [
     processor: "Intel Core evo i5 11th Gen",
     graphics_card: "Integrated",
     link: "https://www.lenovo.com/in/en/laptops/yoga/yoga-s-series/Yoga-Slim-7-Pro-14ITL5/p/WMD00000492",
-    img: LenovoYogaSlim7iPro,
+    img: "/images/devices/laptops/lenovo-yoga-slim-7i-pro.webp",
   },
   {
     id: 3,
@@ -33,6 +30,8 @@ export default [
     processor: "Intel Core i7 14th Gen (14700HX)",
     graphics_card: "Nvidia GeForce RTX 4050 Laptop GPU",
     link: "https://www.msi.com/Laptop/Sword-16-HX-B14VX/Specification",
-    img: MsiSword16HX,
+    img: "/images/devices/laptops/msi-sword-16-hx-b14v.webp",
   },
 ];
+
+export default laptops;

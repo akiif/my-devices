@@ -16,8 +16,10 @@ A website listing all of the tech devices that I have owned.
 
 ## Technologies
 
--   React 18.2.0
--   Vite 3.2.3
+-   Next.js 16 (App Router, static export)
+-   React 19
+-   TypeScript
+-   Tailwind CSS
 
 ## Setup
 

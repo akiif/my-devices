@@ -1,6 +1,7 @@
-import React from "react";
+import { basePath } from "@/lib/site-config";
+import type { Device } from "@/data/types";
 
-function DeviceItem({ item }) {
+function DeviceItem({ item }: { item: Device }) {
   return (
     <div className="device-item">
       <h3 className="title">
@@ -8,7 +9,11 @@ function DeviceItem({ item }) {
         <span className="title-name">{item.name}</span>
       </h3>
       <div className="image-container">
-        <img src={item.img} alt={`${item.name} Image`} className="device-img" />
+        <img
+          src={`${basePath}${item.img}`}
+          alt={`${item.name} Image`}
+          className="device-img"
+        />
       </div>
       <div className="device-details">
         <p className="desc">
@@ -51,4 +56,5 @@ function DeviceItem({ item }) {
     </div>
   );
 }
+
 export default DeviceItem;
