@@ -13,7 +13,11 @@ export const metadata: Metadata = {
   description: "A website listing all of the tech devices that I have owned.",
   authors: [{ name: "Akif Mohammed" }],
   icons: {
-    icon: `${basePath}/images/favicon.png`,
+    icon: [
+      { url: `${basePath}/images/favicon.svg`, type: "image/svg+xml" },
+      { url: `${basePath}/images/favicon.png`, type: "image/png", sizes: "512x512" },
+    ],
+    apple: `${basePath}/images/apple-touch-icon.png`,
   },
 };
 
