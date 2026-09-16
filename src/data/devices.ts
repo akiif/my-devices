@@ -1,9 +1,10 @@
+import consoles from "./consoles";
 import laptops from "./laptops";
 import phones from "./phones";
 import tablets from "./tablets";
 import type { Device } from "./types";
 
-export type Category = "phones" | "tablets" | "laptops";
+export type Category = "phones" | "tablets" | "laptops" | "consoles";
 
 export interface CategorizedDevice extends Device {
   category: Category;
@@ -14,6 +15,7 @@ export const categoryLabels: Record<Category, string> = {
   phones: "Phone",
   tablets: "Tablet",
   laptops: "Laptop",
+  consoles: "Console",
 };
 
 function tag(list: Device[], category: Category): CategorizedDevice[] {
@@ -24,6 +26,7 @@ export const devices: CategorizedDevice[] = [
   ...tag(phones, "phones"),
   ...tag(tablets, "tablets"),
   ...tag(laptops, "laptops"),
+  ...tag(consoles, "consoles"),
 ].sort((a, b) => b.acquired_year - a.acquired_year || b.id - a.id);
 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

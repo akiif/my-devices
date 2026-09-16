@@ -1,7 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { GanttChart, LayoutGrid } from "lucide-react";
+import {
+  Gamepad2,
+  GanttChart,
+  Laptop,
+  Layers,
+  LayoutGrid,
+  Smartphone,
+  Tablet,
+  type LucideIcon,
+} from "lucide-react";
 import { DeviceCard } from "@/components/device-card";
 import { DeviceTimeline } from "@/components/device-timeline";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -11,11 +20,12 @@ import { devices, type Category } from "@/data/devices";
 type Filter = "all" | Category;
 type View = "grid" | "timeline";
 
-const filters: { value: Filter; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "phones", label: "Phones" },
-  { value: "tablets", label: "Tablets" },
-  { value: "laptops", label: "Laptops" },
+const filters: { value: Filter; label: string; icon: LucideIcon }[] = [
+  { value: "all", label: "All", icon: Layers },
+  { value: "phones", label: "Phones", icon: Smartphone },
+  { value: "tablets", label: "Tablets", icon: Tablet },
+  { value: "laptops", label: "Laptops", icon: Laptop },
+  { value: "consoles", label: "Consoles", icon: Gamepad2 },
 ];
 
 export function DeviceExplorer() {
@@ -33,8 +43,15 @@ export function DeviceExplorer() {
           <div className="-my-1 overflow-x-auto py-1 [scrollbar-width:none]">
             <TabsList className="h-9!">
               {filters.map((f) => (
-                <TabsTrigger key={f.value} value={f.value} className="px-2 sm:px-3">
-                  {f.label}
+                <TabsTrigger
+                  key={f.value}
+                  value={f.value}
+                  aria-label={f.label}
+                  className="px-2 sm:px-3"
+                >
+                  <f.icon />
+                  {/* On phones only the active tab shows its label so all tabs fit. */}
+                  <span className="hidden in-data-active:inline sm:inline">{f.label}</span>
                   <span className="hidden font-mono text-[0.7rem] text-muted-foreground tabular-nums sm:inline">
                     {count(f.value)}
                   </span>

@@ -26,8 +26,8 @@ export function Hero() {
           </span>
         </h1>
         <p className="mt-4 max-w-xl text-base text-pretty text-muted-foreground sm:text-lg">
-          A personal archive of the phones, tablets and laptops that have passed through my
-          hands, from a Nokia N73 to today.
+          A personal archive of the phones, tablets, laptops and consoles that have passed through my
+          hands over the years.
         </p>
 
         <dl className="mt-10 grid grid-cols-2 overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-4 gap-px">
