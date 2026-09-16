@@ -1,221 +1,111 @@
-@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@900&family=Montserrat:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.52 0 0);
+  --accent: oklch(0.96 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.915 0 0);
+  --input: oklch(0.915 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+  --brand: oklch(0.58 0.2 265);
+  --brand-2: oklch(0.62 0.16 205);
+  --grid-line: oklch(0 0 0 / 6%);
 }
 
-body,
-html {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #40375c;
-  /* NOTE: this path is prefixed with the basePath from src/lib/site-config.ts,
-     since raw CSS url()s (unlike next/image) aren't rewritten automatically. */
-  background-image: url("/my-devices/images/bg.png");
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+.dark {
+  --background: oklch(0.13 0.005 270);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.17 0.005 270);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.17 0.005 270);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.25 0.005 270);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.25 0.005 270);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.25 0.005 270);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --brand: oklch(0.72 0.15 265);
+  --brand-2: oklch(0.8 0.12 200);
+  --grid-line: oklch(1 0 0 / 6%);
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-.link-hover:hover {
-  color: #4786e5;
-  fill: #4786e5;
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-/* Heading section */
-
-.heading-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 2.5rem;
-  padding: 15px;
-  padding-top: 20px;
-  background-color: #1f1f1f;
-  background-image: url("/my-devices/images/bg3.png");
-}
-
-.heading-section h1 {
-  font-family: "Catamaran", sans-serif;
-  font-weight: 900;
-  margin: 0;
-}
-
-.devices-list-section {
-  padding: 0% 10% 5%;
-}
-
-/* Device item */
-
-.devices-list-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-}
-
-.devices-list-container + .devices-list-container {
-  margin-top: 25px;
-}
-
-.devices-list-container h2 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.devices-list {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 6px;
-}
-
-.device-item {
-  display: flex;
-  flex-direction: column;
-  width: 29%;
-  margin-right: 20px;
-  margin-bottom: 15px;
-  border: 0.8px solid #1a1f2c;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: #37415c;
-  background-image: url("/my-devices/images/bg2.png");
-}
-
-.device-item:hover {
-  box-shadow:
-    rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.device-item h3 {
-  font-size: 1.4rem;
-  padding-left: 15px;
-  display: flex;
-}
-
-.title-name {
-  text-align: center;
-}
-
-.device-container {
-  display: flex;
-}
-
-.image-container {
-  width: 100%;
-  height: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.device-img {
-  max-width: 95%;
-  max-height: 95%;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  transition: 1s ease;
-}
-
-.device-img:hover {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
-  transition: 1s ease;
-}
-
-.device-details {
-  padding-left: 15px;
-  margin: 12px 0;
-  margin-top: auto;
-  padding-top: 10px;
-}
-
-.desc-header {
-  font-weight: 600;
-}
-
-/* Footer section */
-
-footer {
-  margin-top: auto;
-  text-align: center;
-  padding: 18px;
-  background-image: url("/my-devices/images/bg3.png");
-  background-color: #1f1f1f;
-}
-
-footer a {
-  text-decoration: none;
-  color: #fff;
-}
-
-footer a:hover,
-footer a:focus {
-  color: #4786e5;
-}
-
-/* Scrollbar Section*/
-
-/* scrollbar width */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-/* scrollbar Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-
-/* scrollbar Handle */
-::-webkit-scrollbar-thumb {
-  background: #37415c;
-  border-radius: 10px;
-}
-
-/* scrollbar Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #4786e5;
-}
-
-/* Media Query from Tablets */
-
-@media (max-width: 1044px) {
-  .device-item {
-    width: 44%;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-
-  .heading-section {
-    font-size: 2.2rem;
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
   }
-}
-
-/* Media Query for Smartphones */
-
-@media (max-width: 768px) {
-  .device-item {
-    width: 98%;
+  body {
+    @apply bg-background text-foreground;
   }
-
-  .heading-section {
-    font-size: 2rem;
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }
