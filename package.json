@@ -9,7 +9,7 @@
     "build": "next build",
     "postbuild": "cp out/index.html out/404.html",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d out",
+    "deploy": "gh-pages -d out --nojekyll",
     "lint": "eslint"
   },
   "dependencies": {
