@@ -16,17 +16,17 @@ const consoles: Device[] = [
   },
   {
     id: 2,
-    name: "Xbox 360 E + Kinect",
-    released_date: "June 2013",
+    name: "Xbox 360 S + Kinect",
+    released_date: "June 2010",
     acquired_year: 2014,
     specs: {
       processor: "IBM Xenon tri-core 3.2GHz",
       gpu: "ATI Xenon",
       ram: "512MB",
-      storage: ["4GB"],
+      storage: ["250GB"],
     },
     link: "https://en.wikipedia.org/wiki/Xbox_360",
-    img: "/images/devices/consoles/xbox-360-e.webp",
+    img: "/images/devices/consoles/xbox-360-s.webp",
   },
 ];
 
